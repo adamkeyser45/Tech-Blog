@@ -7,8 +7,9 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({ helpers });
+// const helpers = require('./utils/helpers');
+// enter in helpers below?
+const hbs = exphbs.create({ });
 
 const sess = {
     secret: 'The secret Password',
