@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_url',
+            'post_text',
             'title',
             'created_at'
         ],
@@ -32,11 +32,11 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => {
             // pass a single post object into the homepage template
-            // const posts = dbPostData.map(post => post.get({ plain: true }))
-            // res.render('homepage', { 
-            //     posts,
-            //     loggedIn: req.session.loggedIn 
-            // });
+            const posts = dbPostData.map(post => post.get({ plain: true }))
+            res.render('homepage', { 
+                // posts,
+                // loggedIn: req.session.loggedIn 
+            });
         })
         .catch(err => {
             console.log(err);
@@ -53,7 +53,7 @@ router.get('/post/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
+            'post_text',
             'title',
             'created_at'
         ],  
