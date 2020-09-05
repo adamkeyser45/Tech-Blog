@@ -11,7 +11,7 @@ const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'The secret Password',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -25,14 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// turn on routes
 app.use(routes);
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// turn on connection to db and server
-//The "sync" part means that this is Sequelize taking the models and connecting them to associated database tables. If it doesn't find a table, it'll create it for you!
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
