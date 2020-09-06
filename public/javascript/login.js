@@ -19,6 +19,8 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log(response);
+            alert('Thanks for signing up!')
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         };
