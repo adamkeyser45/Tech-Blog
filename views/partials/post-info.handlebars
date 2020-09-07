@@ -1,15 +1,19 @@
-<article class="post">
-    <div class="title">
-        <a href="/post/{{id}}"> {{title}} </a>
-    </div>
+<div class="card border-dark mb-3">
+    <div class="card-body">
+        <article class="post">
+            <div class="title">
+                <a href="/post/{{id}}"> {{title}} </a>
+            </div>
 
-    <div>
-        <p>{{post_text}}</p>
-    </div>
-    <div class="meta">
-        By {{user.username}} on
-        {{created_at}}
-        |
-        Comment(s): {{comments.length}}
-    </div>
-</article>
+            <div class="">
+                <p>{{post_text}}</p>
+            </div>
+            <div class="meta">
+                By {{user.username}} on
+                {{created_at}}
+                |
+                Comment(s): {{comments.length}}
+            </div>
+        </article>
+    </div>    
+</div>
