@@ -1,31 +1,43 @@
-<section>
-    <h2>Create New Blog Post</h2>
+<div class="card">
+    <div class="card-body">
+        <section>
+            <h2>Create New Blog Post</h2>
 
-    <form class="new-post-form">
-        <div>
-            <label for="post-title">Blog Post Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <label for="post-text">Post Text</label>
-            <textarea id="post-text" name="post-text"></textarea>
-        </div>
-        <button type="submit" class="btn">Add Your Blog Post!</button>
-    </form>
-</section>
+            <form class="card">
+                <div>
+                    <label for="post-title">Blog Post Title</label>
+                    <br/>
+                    <input type="text" id="post-title" name="post-title" style="width: 50%;" />
+                </div>
+                <br/>
+                <div>
+                    <label for="post-text">Post Text</label>
+                    <br/>
+                    <textarea id="post-text" name="post-text" style="width: 80%; height: 100px"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-success" style="width: 200px;">Add Your Blog Post!</button>
+            </form>
+        </section>
+    </div>
+</div>
 
 {{#if posts.length}}
-<section>
-    <h2>Your Blog Posts</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-        </li>
-        {{/each}}
-    </ol>
-</section>
+<div class="card">
+    <div class="card-body">
+        <section>
+            <h2>Your Blog Posts</h2>
+            <ol>
+                {{#each posts as |post|}}
+                <li>
+                    {{> post-info post}}
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+    </div>
+</div>
+
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
