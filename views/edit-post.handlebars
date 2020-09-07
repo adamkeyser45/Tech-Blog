@@ -1,46 +1,33 @@
-<article>
-    <a href="/dashboard"> &larr; Back to dashboard</a>
-    <h2>
-        Edit Post
-    </h2>
-    <form class="edit-post-form">
-        <div>
-            Blog Post Title
-            <br/>
-            <input name="post-title" type="text" value="{{post.title}}" />
-            <br/>
-            <br/>
-            Post Text
-            <br/>
-            <textarea name="post-text">{{post.post_text}}</textarea>
-        </div>
-        <div>
-            |
-            <a href="/post/{{post.id}}">Comments {{post.comments.length}}</a>
-        </div>
-        <button type="submit">Save post</button>
-        <button type="button" class="delete-post-btn">Delete post</button>
-    </form>
-</article>
-
-
-{{!-- {{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
+<div class="card">
+    <div class="card-body">
+        <article>
+            <a href="/dashboard"> &larr; Back to dashboard</a>
+            <h2>
+                Edit Post
+            </h2>
+            <form class="card">
+                <div>
+                    Blog Post Title
+                    <br/>
+                    <input name="post-title" type="text" value="{{post.title}}" style="width: 50%;"/>
+                    <br/>
+                    <br/>
+                    Post Text
+                    <br/>
+                    <textarea name="post-text" style="width: 80%; height: 100px">{{post.post_text}}</textarea>
+                </div>
+                <div>
+                    |
+                    <a href="/post/{{post.id}}">Comments {{post.comments.length}}</a>
+                </div>
+                <button type="submit" class="btn-outline-success" style="width: 200px;">Save post</button>
+                <button type="button" class="btn-outline-danger" style="width: 200px;">Delete post</button>
+            </form>
+        </article>        
     </div>
+</div>
 
-    <div>
-        <button type="submit">add comment</button>
-    </div>
-</form>
-{{/if}}
 
-{{> comments post.comments}}
-
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-{{/if}} --}}
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
