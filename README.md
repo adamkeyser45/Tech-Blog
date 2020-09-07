@@ -28,4 +28,4 @@ The models for this project are posts, comments, and users. Each time a user/com
 The front-end of this project uses the Handlebars template engine to create template HTML code that can be plugged in where necessary. Posts and comments are dynamically added in this way. The application also uses Bootstrap for its front-end styling.
 
 ## Checkout the App on Heroku!:
-Don't forget to try out the app using Heroku![HERE!](https://calm-garden-95272.herokuapp.com/)
+[Don't forget to try out the app using Heroku!](https://calm-garden-95272.herokuapp.com/)
